@@ -1,0 +1,26 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  --foreground-color: 0, 0, 0;
+  --background-color: 255, 255, 255;
+}
+
+body {
+  color: var(--foreground-color);
+  background: var(--background-color);
+}
+
+.nav-link {
+  background-color: white;
+  padding: 10px 20px;
+  border-radius: 20px;
+  box-shadow: 1px 1px 3px rgba(0,0,0,0.3);
+  transition: background-color 0.2s;
+}
+
+.nav-link:hover {
+  background-color:#ebebeb;
+  transition: background-color 0.2s;
+}
