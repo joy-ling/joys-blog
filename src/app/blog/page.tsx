@@ -1,6 +1,7 @@
 import Link from "next/link";
-import { getPosts } from "@/lib/posts";
-import { Maiden_Orange } from "next/font/google";
+import { BlogPost, getPosts } from "@/lib/posts";
+import SmallPostCard from "@/components/smallPostCard";
+
 
 export default function BlogPage() {
   const posts = getPosts();
@@ -8,16 +9,16 @@ export default function BlogPage() {
   return (
     <main className="flex min-h-screen flex-col items-center justify-between p-24">
       <div>
-        <h2>My Posts</h2>
-        <ul>
-          {posts.map((post) => {
+        <h2 className="text-4xl font-black mb-5">My Posts</h2>
+        
+        <div className="grid grid-cols-3 gap-5">
+          {posts.map((post: BlogPost) => {
             return(
-              <li key={post.slug}>
-                <Link href={`/blog/${post.slug}`}>{post.title}</Link>
-              </li>
+              <SmallPostCard blogPost={post}/>
             );
           })}
-        </ul>
+        </div>
+          
       </div>
     </main>
   );
