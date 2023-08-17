@@ -9,7 +9,7 @@ export default function BlogPage() {
   return (
     <main className="flex min-h-screen flex-col items-center justify-between p-24">
       <div>
-        <h2 className="text-4xl font-black mb-5">My Posts</h2>
+        <h2 className="text-4xl font-black mb-5">The Travelog</h2>
         
         <div className="grid grid-cols-3 gap-5">
           {posts.map((post: BlogPost) => {

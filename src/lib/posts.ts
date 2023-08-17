@@ -141,8 +141,6 @@ const POSTS: BlogPost[] = [
     },
   ];
 
-
-
   // Get all posts
   export function getPosts() {
     return POSTS;
