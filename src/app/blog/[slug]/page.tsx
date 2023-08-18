@@ -1,63 +1,54 @@
-import { getPosts, getPostBySlug, getCategoryBySlug, getFeaturedImageByUrl } from "@/lib/posts";
+import { Categories, getCategoryBySlug, getPostBySlug, getPosts } from "@/lib/posts";
 import Link from "next/link";
 import CategoryLabel from "@/components/categoryLabel";
 import Image from 'next/image';
+import { format, parseISO } from 'date-fns'
+import { allPosts, Post } from 'contentlayer/generated'
 
 
-type BlogPostParams = {
-  params: {
-    slug: string;
-  }
+export const generateStaticParams = async () => getPosts().map((post) => ({ slug: post._raw.flattenedPath }))
+
+export const generateMetadata = ({ params }: { params: { slug: string } }) => {
+  const post = getPostBySlug(params.slug)
+  if (!post) throw new Error(`Post not found for slug: ${params.slug}`)
+  return { title: post.title }
 }
 
-// This builds all the params for ALL blog posts when the website is deployed
-export function generateStaticParams() {
-  const posts = getPosts();
-
-  // generateStaticParams expects you to output an array of objects, containing the slug
-  const slugsArray = posts.map((post) => ({slug: post.slug}))
+export default function PostLayout ({ params }: { params: { slug: string } }) {
+  const post = getPostBySlug(params.slug)
   
-  return slugsArray;
-}
+  if (!post) throw new Error(`Post not found for slug: ${params.slug}`)
 
-export default function page({ params }: BlogPostParams) {
+  const category = getCategoryBySlug(post.category);
 
-  const post = getPostBySlug(params.slug);
-  const category = getCategoryBySlug(post?.category);
-  const image = getFeaturedImageByUrl(post?.featuredImage);
-
-  // If post is missing...
-  if(!post) {
-    return (
-      <main className="flex min-h-screen flex-col items-center justify-between p-24">
-      <div className="flex flex-col justify-start w-full">
-        <h1 className="text-3xl">Missing Post</h1>
-        <p>This post does not exist</p>
-      </div>
-    </main>
-    );
-  }
-  
-
+  console.log(category);
 
   return (
-    <main className="flex min-h-screen flex-col items-center justify-between p-24">
-      <div>
+    <article className="flex min-h-screen flex-col items-center justify-between p-24">
 
-        <Image className="shadow-md" src={image?.imageUrl} alt={image?.imageAlt} width={700} height={500}></Image>
+      <div className="mb-8 text-center">
+        <time dateTime={post.date} className="mb-1 text-xs text-gray-600">
+          {format(parseISO(post.date), 'LLLL d, yyyy')}
+        </time>
+
+        <Image className="shadow-md" src={post.featuredImage} alt={post.description} width={700} height={500}></Image>
 
         <h1 className="text-3xl mt-5 mb-5">{post?.title}</h1>
 
         <div className="flex flex-col mt-3 mb-3">
           <strong>Category:</strong>
+          {/* @ts-ignore */}
           <CategoryLabel category={category}/>
         </div>
-        
 
-        <div className="mt-5 mb-5">
-          {post?.content}
-        </div>
       </div>
-    </main>
-  );
+
+      <div className="[&>*]:mb-3 [&>*:last-child]:mb-0" dangerouslySetInnerHTML={{ __html: post.body.html }} />
+
+      <div className="mt-5 mb-5">
+        <strong>View Count:</strong>
+      </div>
+    
+    </article>
+  )
 }
