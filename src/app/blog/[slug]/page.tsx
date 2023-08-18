@@ -1,5 +1,8 @@
-import { getPosts, getPostBySlug } from "@/lib/posts";
-import { notFound } from "next/navigation";
+import { getPosts, getPostBySlug, getCategoryBySlug, getFeaturedImageByUrl } from "@/lib/posts";
+import Link from "next/link";
+import CategoryLabel from "@/components/categoryLabel";
+import Image from 'next/image';
+
 
 type BlogPostParams = {
   params: {
@@ -18,25 +21,42 @@ export function generateStaticParams() {
 }
 
 export default function page({ params }: BlogPostParams) {
-  const post = getPostBySlug(params.slug);
 
+  const post = getPostBySlug(params.slug);
+  const category = getCategoryBySlug(post?.category);
+  const image = getFeaturedImageByUrl(post?.featuredImage);
+
+  // If post is missing...
   if(!post) {
     return (
       <main className="flex min-h-screen flex-col items-center justify-between p-24">
-      <div>
-        <h1>Missing Post</h1>
+      <div className="flex flex-col justify-start w-full">
+        <h1 className="text-3xl">Missing Post</h1>
         <p>This post does not exist</p>
       </div>
     </main>
     );
   }
+  
+
 
   return (
     <main className="flex min-h-screen flex-col items-center justify-between p-24">
       <div>
-        <h1>{post?.title}</h1>
-        <strong>{post?.category}</strong>
-        <p>{post?.content}</p>
+
+        <Image className="shadow-md" src={image?.imageUrl} alt={image?.imageAlt} width={700} height={500}></Image>
+
+        <h1 className="text-3xl mt-5 mb-5">{post?.title}</h1>
+
+        <div className="flex flex-col mt-3 mb-3">
+          <strong>Category:</strong>
+          <CategoryLabel category={category}/>
+        </div>
+        
+
+        <div className="mt-5 mb-5">
+          {post?.content}
+        </div>
       </div>
     </main>
   );
