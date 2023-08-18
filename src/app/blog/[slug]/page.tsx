@@ -21,8 +21,6 @@ export default function PostLayout ({ params }: { params: { slug: string } }) {
 
   const category = getCategoryBySlug(post.category);
 
-  console.log(category);
-
   return (
     <article className="flex min-h-screen flex-col items-center justify-between p-24">
 
@@ -44,10 +42,6 @@ export default function PostLayout ({ params }: { params: { slug: string } }) {
       </div>
 
       <div className="[&>*]:mb-3 [&>*:last-child]:mb-0" dangerouslySetInnerHTML={{ __html: post.body.html }} />
-
-      <div className="mt-5 mb-5">
-        <strong>View Count:</strong>
-      </div>
     
     </article>
   )
