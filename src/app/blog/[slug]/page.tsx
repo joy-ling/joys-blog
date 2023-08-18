@@ -1,9 +1,8 @@
-import { Categories, getCategoryBySlug, getPostBySlug, getPosts } from "@/lib/posts";
+import { getCategoryBySlug, getPostBySlug, getPosts } from "@/lib/posts";
 import Link from "next/link";
 import CategoryLabel from "@/components/categoryLabel";
 import Image from 'next/image';
 import { format, parseISO } from 'date-fns'
-import { allPosts, Post } from 'contentlayer/generated'
 
 
 export const generateStaticParams = async () => getPosts().map((post) => ({ slug: post._raw.flattenedPath }))
