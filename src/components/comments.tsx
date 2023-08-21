@@ -3,7 +3,7 @@ import { WEBSITE_URL } from "config";
 export default async function Comments({slug}: {slug:string}) {
     console.log({WEBSITE_URL});
 
-    const commentsRes = await fetch(`https://joys-blog.vercel.app/api/comments/${slug}`, {next: {revalidate: 10}});
+    const commentsRes = await fetch(`${WEBSITE_URL}/api/comments/${slug}`, {next: {revalidate: 10}});
     const comments = await commentsRes.json();
 
     return (
