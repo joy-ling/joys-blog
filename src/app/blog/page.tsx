@@ -12,7 +12,7 @@ export default function BlogPage() {
       <div>
         <h2 className="text-4xl font-black mb-5">The Travelog</h2>
         
-        <div className="grid grid-cols-3 gap-5">
+        <div className="grid grid-cols-1 gap-5 lg:grid-cols-3">
           {posts.map((post: Post, idx: number) => (
             <SmallPostCard key={idx} {...post} />
           ))}

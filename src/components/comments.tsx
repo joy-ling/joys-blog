@@ -1,9 +1,13 @@
 import { WEBSITE_URL } from "config";
 
 export default async function Comments({slug}: {slug:string}) {
-    // const commentsRes = await fetch(`${WEBSITE_URL}/api/comments/${slug}`, {next: {revalidate: 10}});
-    const commentsRes = await fetch(`https://joys-blog.vercel.app/api/comments/${slug}`, {next: {revalidate: 10}});
-    const comments = await commentsRes.json();
+    let comments = [];
+    try {
+        const commentsRes = await fetch(`${WEBSITE_URL}/api/comments/${slug}`, {next: {revalidate: 10}});
+        comments = await commentsRes.json();
+    } catch(err) {
+        console.log(err);
+    }
 
     return (
         <div className="pt-5 pb-5">
