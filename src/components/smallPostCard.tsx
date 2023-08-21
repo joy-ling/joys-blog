@@ -18,9 +18,11 @@ export default function SmallPostCard(post: Post){
     return (
         <div key={post?.slug} className="flex flex-col justify-between border-2 border-slate-100 p-7 shadow-md">
             
-            <Link href={`/blog/${post.slug}`}>
-                <Image src={post.featuredImage} alt={post.title} width={400} height={500}></Image>
-            </Link>
+            <div className="w-full h-[200px] relative">
+                <Link href={`/blog/${post.slug}`}>
+                    <Image src={post.featuredImage} alt={post.title} layout='fill' objectFit='cover'></Image>
+                </Link>
+            </div>
 
             <Link href={`/blog/${post.slug}`}>
                 <h2 className="pt-3 text-lg text-red-500 font-black hover:underline">{post?.title}</h2>
