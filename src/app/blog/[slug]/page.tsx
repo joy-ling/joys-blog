@@ -31,7 +31,7 @@ export default function PostLayout ({ params }: { params: { slug: string } }) {
         <h1 className="text-3xl mt-5 mb-5">{post?.title}</h1>
 
         <time dateTime={post.date} className="mb-5 text-xs text-gray-600">
-          {format(parseISO(post.date), 'LLLL d, yyyy')}
+          {format(parseISO(post.date), 'd LLLL yyyy')}
         </time>
 
         <div className="flex flex-col mt-3 mb-3">
