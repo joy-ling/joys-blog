@@ -1,6 +1,6 @@
 import { allPosts as POSTS } from "contentlayer/generated";
 
-export type Categories = {
+export type Category = {
   categoryName: string,
   categorySlug: string,
 }
@@ -11,7 +11,7 @@ export type FeaturedImage = {
   imageAlt: string,
 }
 
-const CATEGORIES: Categories[] = [
+const CATEGORIES: Category[] = [
   {
     categoryName: "Europe",
     categorySlug: "europe",
@@ -21,8 +21,8 @@ const CATEGORIES: Categories[] = [
     categorySlug: "asia",
   },
   {
-    categoryName: "America",
-    categorySlug: "america",
+    categoryName: "Americas",
+    categorySlug: "americas",
   }
 ]
 
