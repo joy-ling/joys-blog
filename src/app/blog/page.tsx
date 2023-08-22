@@ -20,8 +20,8 @@ export default function BlogPage() {
       <div className="flex flex-col text-xs pb-5">
         <strong>Filter by Category:</strong>
         <ul className="flex flex-row pt-2">
-          {categories.map((category: Category) => (
-              <li className="mr-5"><CategoryLabel key={category.categorySlug} category={category}/></li>
+          {categories.map((category: Category, idx: number) => (
+              <li className="mr-5"><CategoryLabel key={idx} category={category}/></li>
           ))}
         </ul>
         
