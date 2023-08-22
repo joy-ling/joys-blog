@@ -42,7 +42,7 @@ export default function PostLayout ({ params }: { params: { slug: string } }) {
 
       </div>
 
-      <div className="[&>*]:mb-3 [&>*:last-child]:mb-0" dangerouslySetInnerHTML={{ __html: post.body.html }} />
+      <div className="w-full lg:w-[700px] [&>*]:mb-3 [&>*:last-child]:mb-0" dangerouslySetInnerHTML={{ __html: post.body.html }} />
 
       {/* @ts-ignore */}
       <Comments slug={params.slug}/>
