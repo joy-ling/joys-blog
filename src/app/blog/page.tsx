@@ -21,7 +21,7 @@ export default function BlogPage() {
         <strong>Filter by Category:</strong>
         <ul className="flex flex-row pt-2">
           {categories.map((category: Category) => (
-              <li className="mr-5"><CategoryLabel category={category}/></li>
+              <li className="mr-5"><CategoryLabel key={category.categorySlug} category={category}/></li>
           ))}
         </ul>
         
