@@ -1,4 +1,4 @@
-import { Categories, getCategories } from "@/lib/posts";
+import { Category, getCategories } from "@/lib/posts";
 import Link from "next/link";
 
 export default function CategoriesPage() {
@@ -9,7 +9,7 @@ export default function CategoriesPage() {
         <main className="flex min-h-screen flex-col items-center p-24">
             <h2 className="text-xl">Categories</h2>
             <ul>
-                {categories.map((category: Categories) => {
+                {categories.map((category: Category) => {
                     return (
                         <li key={category.categorySlug}>
                             <Link href={`/blog/categories/${category.categorySlug}`}>{category.categoryName}</Link>
