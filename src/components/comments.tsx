@@ -1,6 +1,7 @@
 import { WEBSITE_URL } from "config";
+import CommentForm from "./commentForm";
 
-export default async function Comments({slug}: {slug:string}) {
+export default async function Comments({ slug }: { slug:string }) {
     let comments = [];
     try {
         const commentsRes = await fetch(`${WEBSITE_URL}/api/comments/${slug}`, {next: {revalidate: 10}});
@@ -24,22 +25,7 @@ export default async function Comments({slug}: {slug:string}) {
             })}
 
             <h3 className="text-2xl pt-5">Submit a Comment</h3>
-            
-            <form className="pt-5 pb-5" action={`/api/comments/${slug}`} method="POST">
-                <div className="flex flex-col">
-                    <label htmlFor="username">Name</label>
-                    <input className="border-2 border-gray-100" name="username" type="text"/>
-                </div>
-                
-                <br />
-                <label htmlFor="comment">Comment</label>
-                <br />
-                <textarea className="border-2 border-gray-100" name="comment" cols={30} rows={10}/>
-                <br />
-                <button className="bg-red-600 text-white p-3 mt-5" type="submit">Submit Comment</button>
-            </form>
-
-
+            <CommentForm slug={slug} />
             
         </div>
     );
