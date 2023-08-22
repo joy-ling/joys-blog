@@ -26,7 +26,7 @@ export default function PostLayout ({ params }: { params: { slug: string } }) {
 
       <div className="flex flex-col items-center">
         
-        <div className="w-full w-[700px] h-[400px] shadow-md relative">
+        <div className="w-[700px] h-[400px] shadow-md relative">
             <Image  src={post.featuredImage} alt={post.description} layout='fill' objectFit='cover'></Image>
         </div>
 
