@@ -24,9 +24,11 @@ export default function PostLayout ({ params }: { params: { slug: string } }) {
   return (
     <article className="flex min-h-screen flex-col items-center justify-between p-24">
 
-      <div className="mb-8 text-center">
+      <div className="flex flex-col items-center">
         
-        <Image className="shadow-md" src={post.featuredImage} alt={post.description} width={700} height={500}></Image>
+        <div className="w-full w-[700px] h-[400px] shadow-md relative">
+            <Image  src={post.featuredImage} alt={post.description} layout='fill' objectFit='cover'></Image>
+        </div>
 
         <h1 className="text-3xl mt-5 mb-5">{post?.title}</h1>
 
