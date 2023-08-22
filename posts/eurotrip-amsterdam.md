@@ -2,7 +2,7 @@
 title: "Epic Eurotrip Part IV: Amsterdam"
 date: 2021-12-24
 category: europe
-featuredImage: "/placeholder.jpg"
+featuredImage: "/amsterdam.jpg"
 description: We took a train from Brussels to Amsterdam.
 ---
 
