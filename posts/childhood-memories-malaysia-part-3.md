@@ -1,6 +1,6 @@
 ---
-title: "Childhood Memories: Malaysia Part III"
-date: 2021-12-24
+title: "Visiting Malaysia Part III"
+date: 2013-06-01
 category: asia
 featuredImage: "/malaysia-3.jpg"
 description: My third time in Malaysia.

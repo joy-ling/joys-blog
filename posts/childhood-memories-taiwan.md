@@ -1,6 +1,6 @@
 ---
 title: "Childhood Memories: Taiwan"
-date: 2021-12-24
+date: 2008-06-01
 category: asia
 featuredImage: "/taiwan.jpg"
 description: I went to Taiwant to visit my father's family.

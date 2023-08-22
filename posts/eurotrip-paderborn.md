@@ -1,6 +1,6 @@
 ---
 title: "Epic Eurotrip Part V: Paderborn"
-date: 2021-12-24
+date: 2014-04-15
 category: europe
 featuredImage: "/paderborn-cathedral.jpg"
 description: We took a train from Amsterdam to Paderborn.

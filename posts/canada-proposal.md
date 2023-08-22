@@ -1,6 +1,6 @@
 ---
 title: "A Proposal in Canada"
-date: 2021-12-24
+date: 2018-06-22
 category: americas
 featuredImage: "/canada.jpg"
 description: My husband proposed to me in Canada. Here's how that went.

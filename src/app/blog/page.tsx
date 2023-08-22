@@ -10,8 +10,6 @@ export default function BlogPage() {
   const posts = allPosts.sort((a: Post, b: Post) => compareDesc(new Date(a.date), new Date(b.date)))
   const categories = getCategories();
 
-  console.log(categories);
-
   return (
     <main className="flex min-h-screen flex-col items-center justify-between p-24">
       <div>

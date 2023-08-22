@@ -31,7 +31,7 @@ export default function SmallPostCard(post: Post){
             <p className="text-s pt-3 pb-3">{post?.description}</p>
 
             <time dateTime={post.date} className="mb-2 block text-xs text-gray-600">
-                {format(parseISO(post.date), 'LLLL d, yyyy')}
+                {format(parseISO(post.date), 'd LLLL yyyy')}
             </time>
 
             <CategoryLabel category={category}/>

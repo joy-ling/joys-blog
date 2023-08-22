@@ -1,6 +1,6 @@
 ---
 title: "Epic Eurotrip Part I: Barcelona"
-date: 2021-12-24
+date: 2014-04-07
 category: europe
 featuredImage: "/spain.JPG"
 description: We flew from Liverpool to Barcelona.

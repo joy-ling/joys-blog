@@ -1,6 +1,6 @@
 ---
 title: "Childhood Memories: Malaysia Part I"
-date: 2021-12-24
+date: 2008-06-01
 category: asia
 featuredImage: "/malaysia-1.jpg"
 description: My first trip abroad was to Malaysia.
