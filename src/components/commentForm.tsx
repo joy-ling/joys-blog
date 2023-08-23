@@ -25,7 +25,7 @@ export default function CommentForm({ slug, username }: { slug:string; username:
 
         // Make our API call
         const options = {body: formData, method: "Post"};
-        const res = await fetch(`${WEBSITE_URL}/api/comments/${slug}`, options);
+        const res = await fetch(`/api/comments/${slug}`, options);
         console.log(res);
 
         // @ts-ignore

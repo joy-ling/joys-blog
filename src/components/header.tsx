@@ -11,7 +11,7 @@ export default async function Header(){
     const user: User | null = await currentUser();
 
     return(
-        <header className="flex flex-col overflow-hidden items-center p-10 bg-[url('/sky.jpg')] h-[350px] bg-center bg-cover shadow-md">
+        <header className="flex flex-col overflow-hidden items-center p-10 bg-[url('/hero.jpg')] h-[350px] bg-top bg-cover shadow-md">
             
             <div className="flex flex-row w-full items-end">
                 {/* @ts-ignore */}
