@@ -26,9 +26,9 @@ export default function PostLayout ({ params }: { params: { slug: string } }) {
   return (
     <article className="flex min-h-screen flex-col items-center justify-between p-24">
 
-      <div className="flex flex-col items-center">
+      <div className="w-full flex flex-col items-center">
         
-        <div className="w-full lg:w-[700px] h-[200px] lg:h-[400px] shadow-md relative">
+        <div className="w-full h-[200px] lg:h-[400px] shadow-md relative">
             <Image  src={post.featuredImage} alt={post.description} layout='fill' objectFit='cover'></Image>
         </div>
 
@@ -46,7 +46,7 @@ export default function PostLayout ({ params }: { params: { slug: string } }) {
 
       </div>
 
-      <div className="w-full lg:w-[700px] [&>*]:mb-3 [&>*:last-child]:mb-0" dangerouslySetInnerHTML={{ __html: post.body.html }} />
+      <div className="[&>*]:mb-3 [&>*:last-child]:mb-0" dangerouslySetInnerHTML={{ __html: post.body.html }} />
 
       <Suspense fallback={<LoadComment />}>
         {/* @ts-ignore */}

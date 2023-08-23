@@ -3,6 +3,7 @@ import { mouse_memoirs } from "@/app/layout";
 import { UserButton } from "@clerk/nextjs";
 import { currentUser } from "@clerk/nextjs";
 import type { User } from "@clerk/nextjs/api";
+import Sticker from "@/components/sticker";
 
 
 export default async function Header(){
@@ -25,10 +26,6 @@ export default async function Header(){
                     <li><Link className="nav-link" href="/blog">Blog</Link></li>
                 </ul>
             </nav>
-            
-            <div className="stickers">
-
-            </div>
         </header>
     );
 }

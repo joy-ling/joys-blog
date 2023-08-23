@@ -29,8 +29,6 @@ export default function CommentForm({ slug, username }: { slug:string; username:
         console.log(res);
 
         // @ts-ignore
-        event.target.username.value = "";
-        // @ts-ignore
         event.target.comment.value = "";
 
         // Refresh the current route and fetch new data from the server without listing the client-side browser or React state
