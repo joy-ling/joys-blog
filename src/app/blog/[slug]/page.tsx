@@ -24,10 +24,10 @@ export default function PostLayout ({ params }: { params: { slug: string } }) {
   const category = getCategoryBySlug(post.category);
 
   return (
-    <article className="w-full flex min-h-screen flex-col items-center justify-between p-24">
+    <article className="w-full flex min-h-screen flex-col items-center justify-between p-5 md:p-24">
 
-      <div className="lg:w-[800px]">
-        <div className="lg:w-[800px] flex flex-col items-center">
+      <div className="w-full lg:w-[800px]">
+        <div className="w-full lg:w-[800px] flex flex-col items-center">
           
           <div className="w-full h-[300px] md:h-[400px] shadow-md relative">
               <Image  src={post.featuredImage} alt={post.description} layout='fill' objectFit='cover'></Image>
