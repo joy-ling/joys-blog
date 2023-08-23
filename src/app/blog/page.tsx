@@ -11,7 +11,7 @@ export default function BlogPage() {
   const categories = getCategories();
 
   return (
-    <main className="flex min-h-screen flex-col items-center justify-between p-5 md:p-24">
+    <main className="flex min-h-screen flex-col items-center justify-between pt-10 p-5 md:p-24">
       <div>
         <h2 className="text-4xl font-black mb-5">The Travelog</h2>
         

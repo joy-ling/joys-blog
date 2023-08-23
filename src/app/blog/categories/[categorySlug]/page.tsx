@@ -15,7 +15,7 @@ export default function CategoryPage({ params }: CategoryParams) {
   const posts = allPosts.sort((a: Post, b: Post) => compareDesc(new Date(a.date), new Date(b.date))).filter((post) => post.category === params.categorySlug)
 
   return (
-    <main className="flex min-h-screen flex-col items-center justify-between p-5 md:p-24">
+    <main className="flex min-h-screen flex-col items-center justify-between pt-10 p-5 md:p-24">
       <div>
         <h2 className="text-3xl mb-5">{categories?.categoryName}</h2>
         

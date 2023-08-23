@@ -6,7 +6,7 @@ export default async function Home() {
   const pageViews = await kv.incr("views");
 
   return (
-    <main className="flex w-full min-h-screen flex-col items-center p-5 md:p-24">
+    <main className="flex w-full min-h-screen flex-col items-center pt-10 p-5 md:p-24">
 
       <div className="w-full lg:w-[800px]">
         <h2 className="text-3xl pb-5">Allow me Introduce Myself</h2>
