@@ -19,7 +19,7 @@ export default async function Header(){
                 <UserButton afterSignOutUrl="/" />
             </div>
 
-            <h1 className={`${mouse_memoirs.className} text-7xl pt-7`}>Joy&apos;s Travelog</h1>
+            <h1 className={`${mouse_memoirs.className} text-7xl pt-7 text-center`}>Joy&apos;s Travelog</h1>
             <nav>
                 <ul className="flex flex-row p-10">
                     <li className="mr-5"><Link className="nav-link" href="/">Home</Link></li>

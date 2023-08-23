@@ -6,9 +6,9 @@ export default async function Home() {
   const pageViews = await kv.incr("views");
 
   return (
-    <main className="flex w-full min-h-screen flex-col items-center p-24">
+    <main className="flex w-full min-h-screen flex-col items-center p-5 md:p-24">
 
-      <div className="lg:w-[800px]">
+      <div className="w-full lg:w-[800px]">
         <h2 className="text-3xl pb-5">Allow me Introduce Myself</h2>
         <p className="pb-5">My name is Joy Ling, and I&apos;m from Brooklyn, New York. I moved to the United Kingdom four years ago to be with my husband, Alex, a softspoken Brit from Liverpool.</p>
         <p className="pb-5">I&apos;m the youngest child in a family of immigrants. My parents moved from Malaysia to to New York in the 1980s with fifty dollars in their pocket and a determination to seize the opportunities that only America could offer at the time.</p>

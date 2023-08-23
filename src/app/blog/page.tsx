@@ -11,7 +11,7 @@ export default function BlogPage() {
   const categories = getCategories();
 
   return (
-    <main className="flex min-h-screen flex-col items-center justify-between p-24">
+    <main className="flex min-h-screen flex-col items-center justify-between p-5 md:p-24">
       <div>
         <h2 className="text-4xl font-black mb-5">The Travelog</h2>
         
@@ -25,7 +25,7 @@ export default function BlogPage() {
         
       </div>
 
-        <div className="grid grid-cols-1 gap-5 lg:grid-cols-3">
+        <div className="grid grid-cols-1 gap-5 md:grid-cols-2 lg:grid-cols-3">
           {posts.map((post: Post, idx: number) => (
             <SmallPostCard key={idx} {...post} />
           ))}
