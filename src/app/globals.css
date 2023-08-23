@@ -24,3 +24,12 @@ body {
   background-color:#ebebeb;
   transition: background-color 0.2s;
 }
+
+article a {
+  color: rgb(220 38 38);
+  text-decoration: underline;
+}
+
+article a:hover {
+  text-decoration: none;
+}

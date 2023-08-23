@@ -4,6 +4,8 @@ import CategoryLabel from "@/components/categoryLabel";
 import Image from 'next/image';
 import { format, parseISO } from 'date-fns'
 import Comments from "@/components/comments";
+import { Suspense } from "react";
+import LoadComment from "@/components/loadComment";
 
 
 export const generateStaticParams = async () => getPosts().map((post) => ({ slug: post._raw.flattenedPath }))
@@ -46,8 +48,10 @@ export default function PostLayout ({ params }: { params: { slug: string } }) {
 
       <div className="w-full lg:w-[700px] [&>*]:mb-3 [&>*:last-child]:mb-0" dangerouslySetInnerHTML={{ __html: post.body.html }} />
 
-      {/* @ts-ignore */}
-      <Comments slug={params.slug}/>
+      <Suspense fallback={<LoadComment />}>
+        {/* @ts-ignore */}
+        <Comments slug={params.slug}/>
+      </Suspense>
     
     </article>
   )

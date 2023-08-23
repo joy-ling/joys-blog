@@ -4,7 +4,7 @@ import { useRouter } from "next/navigation";
 import { useTransition } from "react";
 
 
-export default function CommentForm({ slug }: { slug:string }) {
+export default function CommentForm({ slug, username }: { slug:string; username:string }) {
     // The router to trigger a page refresh
     const router = useRouter();
     // The react useTransition hook to manage client/server data updates WITHOUT refreshing the page
@@ -15,8 +15,6 @@ export default function CommentForm({ slug }: { slug:string }) {
         event.preventDefault();
         // Get the information from the form
 
-        // @ts-ignore
-        const username = event.target.username.value || "Anonymous";
         // @ts-ignore
         const comment = event.target.comment.value;
 
@@ -45,8 +43,7 @@ export default function CommentForm({ slug }: { slug:string }) {
     return (
         <form className="flex flex-col pt-5 pb-5" onSubmit={handleFormSubmit}>
             <div className="flex flex-col pb-3">
-                <label htmlFor="username">Name</label>
-                <input className="border-2 border-gray-100" name="username" type="text" required/>
+                <p>Commenting as <strong>{username}</strong></p>
             </div>
             
             <div className="flex flex-col pb-3">
