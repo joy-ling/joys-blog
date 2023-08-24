@@ -32,7 +32,7 @@ export default async function Comments({ slug }: { slug:string }) {
             <h3 className="text-2xl pt-5">Submit a Comment</h3>
 
             {/* @ts-ignore */}
-            {user ? <CommentForm slug={slug} username={user.username} /> : <Link href="/sign-in">Please sign in to comment</Link>}
+            {user ? <CommentForm slug={slug} username={user.username} /> : <Link href={`/sign-in?redirect=/blog/${slug}`}>Please sign in to comment</Link>}
 
         </div>
     );
