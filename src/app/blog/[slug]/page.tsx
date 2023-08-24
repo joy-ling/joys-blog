@@ -6,6 +6,7 @@ import { format, parseISO } from 'date-fns'
 import Comments from "@/components/comments";
 import { Suspense } from "react";
 import LoadComment from "@/components/loadComment";
+import { kv } from "@vercel/kv";
 
 
 export const generateStaticParams = async () => getPosts().map((post) => ({ slug: post._raw.flattenedPath }))
@@ -16,12 +17,13 @@ export const generateMetadata = ({ params }: { params: { slug: string } }) => {
   return { title: post.title }
 }
 
-export default function PostLayout ({ params }: { params: { slug: string } }) {
+export default async function PostLayout ({ params }: { params: { slug: string } }) {
   const post = getPostBySlug(params.slug)
   
   if (!post) throw new Error(`Post not found for slug: ${params.slug}`)
 
   const category = getCategoryBySlug(post.category);
+  const pageViews = await kv.incr(`views-${params.slug}`);
 
   return (
     <article className="w-full flex min-h-screen flex-col items-center justify-between p-5 md:p-24">
@@ -51,7 +53,7 @@ export default function PostLayout ({ params }: { params: { slug: string } }) {
             
             <div className="flex flex-col">
               <strong>Views:</strong>
-              <span>0</span>
+              <span>{pageViews}</span>
             </div>
           </div>
           
