@@ -32,22 +32,32 @@ export default function PostLayout ({ params }: { params: { slug: string } }) {
           <div className="w-full h-[300px] md:h-[400px] shadow-md relative">
               <Image  src={post.featuredImage} alt={post.description} layout='fill' objectFit='cover'></Image>
           </div>
-
+  
           <h1 className="text-3xl mt-5 mb-5">{post?.title}</h1>
 
-          <time dateTime={post.date} className="mb-5 text-xs text-gray-600">
-            {format(parseISO(post.date), 'd LLLL yyyy')}
-          </time>
+          <div className="w-full flex flex-row justify-between items-start pt-5 pb-3">
+            <div className="flex flex-col">
+              <strong>Travel Date:</strong>
+              <time dateTime={post.date} className="mb-5 text-xs text-gray-600">
+                {format(parseISO(post.date), 'd LLLL yyyy')}
+              </time>
+            </div>
 
-          <div className="flex flex-col mt-3 mb-3">
-            <strong>Category:</strong>
-            {/* @ts-ignore */}
-            <CategoryLabel category={category}/>
+            <div className="flex flex-col">
+              <strong>Continent:</strong>
+              {/* @ts-ignore */}
+              <CategoryLabel category={category}/>
+            </div>
+            
+            <div className="flex flex-col">
+              <strong>Views:</strong>
+              <span>0</span>
+            </div>
           </div>
-
+          
         </div>
 
-        <div className="[&>*]:mb-3 [&>*:last-child]:mb-0" dangerouslySetInnerHTML={{ __html: post.body.html }} />
+        <div className="border-y-2 pt-10 pb-10 [&>*]:mb-3 [&>*:last-child]:mb-0" dangerouslySetInnerHTML={{ __html: post.body.html }} />
 
         <Suspense fallback={<LoadComment />}>
           {/* @ts-ignore */}

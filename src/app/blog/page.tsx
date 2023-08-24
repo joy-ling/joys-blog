@@ -16,7 +16,7 @@ export default function BlogPage() {
         <h2 className="text-4xl font-black mb-5">The Travelog</h2>
         
       <div className="flex flex-col text-xs pb-5">
-        <strong>Filter by Category:</strong>
+        <strong>Filter by Continent:</strong>
         <ul className="flex flex-row pt-2">
           {categories.map((category: Category) => (
               <li key={category.categorySlug} className="mr-5"><CategoryLabel category={category}/></li>

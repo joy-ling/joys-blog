@@ -21,8 +21,8 @@ const CATEGORIES: Category[] = [
     categorySlug: "asia",
   },
   {
-    categoryName: "Americas",
-    categorySlug: "americas",
+    categoryName: "North America",
+    categorySlug: "north-america",
   }
 ]
 

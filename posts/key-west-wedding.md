@@ -1,7 +1,7 @@
 ---
 title: "A Wedding in Key West"
 date: 2017-06-03
-category: americas
+category: north-america
 featuredImage: "/key-west-wedding.jpg"
 description: My sister got married in Key West, Florida.
 ---
