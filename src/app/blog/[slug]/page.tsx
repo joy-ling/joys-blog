@@ -32,7 +32,7 @@ export default async function PostLayout ({ params }: { params: { slug: string }
         <div className="w-full lg:w-[800px] flex flex-col items-center">
           
           <div className="w-full h-[200px] md:h-[400px] shadow-md relative">
-              <Image  src={post.featuredImage} alt={post.description} layout='fill' objectFit='cover'></Image>
+              <Image src={post.featuredImage} alt={post.description} layout='fill' objectFit='cover'></Image>
           </div>
   
           <h1 className="text-3xl mt-5 mb-5 text-center">{post?.title}</h1>

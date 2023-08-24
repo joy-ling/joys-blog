@@ -1,3 +1,4 @@
+import { kv } from '@vercel/kv'
 import { defineDocumentType, makeSource } from 'contentlayer/source-files'
 
 export const Post = defineDocumentType(() => ({
@@ -13,6 +14,7 @@ export const Post = defineDocumentType(() => ({
   computedFields: {
     url: { type: 'string', resolve: (post) => `/posts/${post._raw.flattenedPath}` },
     slug: { type: 'string', resolve: (post) => post._raw.flattenedPath},
+    // views: {type: 'string', resolve: (post) => kv.get(`${post._raw.flattenedPath}:views`)}
   },
 }))
 
