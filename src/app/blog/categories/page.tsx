@@ -6,7 +6,7 @@ export default function CategoriesPage() {
     
 
     return (
-        <main className="flex min-h-screen flex-col items-center pt-10 p-5 md:p-24">
+        <div>
             <h2 className="text-xl">Categories</h2>
             <ul>
                 {categories.map((category: Category) => {
@@ -17,6 +17,7 @@ export default function CategoriesPage() {
                     );
                 })}
             </ul>
-        </main>
+        </div>
+        
     );
 }

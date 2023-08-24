@@ -31,29 +31,29 @@ export default async function PostLayout ({ params }: { params: { slug: string }
       <div className="w-full lg:w-[800px]">
         <div className="w-full lg:w-[800px] flex flex-col items-center">
           
-          <div className="w-full h-[300px] md:h-[400px] shadow-md relative">
+          <div className="w-full h-[200px] md:h-[400px] shadow-md relative">
               <Image  src={post.featuredImage} alt={post.description} layout='fill' objectFit='cover'></Image>
           </div>
   
-          <h1 className="text-3xl mt-5 mb-5">{post?.title}</h1>
+          <h1 className="text-3xl mt-5 mb-5 text-center">{post?.title}</h1>
 
           <div className="w-full flex flex-row justify-between items-start pt-5 pb-3">
             <div className="flex flex-col">
-              <strong>Travel Date:</strong>
-              <time dateTime={post.date} className="mb-5 text-xs text-gray-600">
+              <strong className="text-xs md:text-s">Travel Date:</strong>
+              <time dateTime={post.date} className="pt-1 text-xs text-gray-600">
                 {format(parseISO(post.date), 'd LLLL yyyy')}
               </time>
             </div>
 
             <div className="flex flex-col">
-              <strong>Continent:</strong>
+              <strong className="text-xs md:text-s">Continent:</strong>
               {/* @ts-ignore */}
               <CategoryLabel category={category}/>
             </div>
             
             <div className="flex flex-col">
-              <strong>Views:</strong>
-              <span>{pageViews}</span>
+              <strong className="text-xs md:text-s">Views:</strong>
+              <span className="text-xs md:text-s pt-1">{pageViews}</span>
             </div>
           </div>
           

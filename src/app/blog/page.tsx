@@ -11,27 +11,25 @@ export default function BlogPage() {
   const categories = getCategories();
 
   return (
-    <main className="flex min-h-screen flex-col items-center justify-between pt-10 p-5 md:p-24">
-      <div>
-        <h2 className="text-4xl font-black mb-5">The Travelog</h2>
-        
-      <div className="flex flex-col text-xs pb-5">
-        <strong>Filter by Continent:</strong>
-        <ul className="flex flex-row pt-2">
-          {categories.map((category: Category) => (
-              <li key={category.categorySlug} className="mr-5"><CategoryLabel category={category}/></li>
-          ))}
-        </ul>
-        
-      </div>
+    <div>
+      <h2 className="text-4xl font-black mb-5">The Travelog</h2>
+      
+    <div className="flex flex-col text-xs pb-5">
+      <strong>Filter by Continent:</strong>
+      <ul className="flex flex-row pt-2">
+        <li className="mr-5"><Link className="text-red-500" href="/blog">All</Link></li>
+        {categories.map((category: Category) => (
+            <li key={category.categorySlug} className="mr-5"><CategoryLabel category={category}/></li>
+        ))}
+      </ul>
+    </div>
 
-        <div className="grid grid-cols-1 gap-5 md:grid-cols-2 lg:grid-cols-3">
-          {posts.map((post: Post, idx: number) => (
-            <SmallPostCard key={idx} {...post} />
-          ))}
-        </div>
-          
+      <div className="grid grid-cols-1 gap-5 md:grid-cols-2 lg:grid-cols-3">
+        {posts.map((post: Post, idx: number) => (
+          <SmallPostCard key={idx} {...post} />
+        ))}
       </div>
-    </main>
+        
+    </div>
   );
 }

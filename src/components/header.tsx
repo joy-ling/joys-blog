@@ -11,15 +11,15 @@ export default async function Header(){
     const user: User | null = await currentUser();
 
     return(
-        <header className="flex flex-col overflow-hidden items-center p-10 bg-[url('/hero.jpg')] h-[350px] bg-top bg-cover shadow-md">
+        <header className="flex flex-col overflow-hidden items-center p-10 bg-[url('/hero.jpg')] h-[300px] md:h-[350px] bg-top bg-cover shadow-md">
             
             <div className="flex flex-row w-full items-end">
                 {/* @ts-ignore */}
-                {user ? "" : <Link className="nav-link" href="/sign-in">Sign In</Link>}
+                {user ? "" : <Link className="nav-link text-xs md:text-s" href="/sign-in">Sign In</Link>}
                 <UserButton afterSignOutUrl="/" />
             </div>
 
-            <h1 className={`${mouse_memoirs.className} text-7xl pt-7 text-center`}>Joy&apos;s Travelog</h1>
+            <h1 className={`${mouse_memoirs.className} text-5xl md:text-7xl pt-7 text-center`}>Joy&apos;s Travelog</h1>
             <nav>
                 <ul className="flex flex-row p-10">
                     <li className="mr-5"><Link className="nav-link" href="/">Home</Link></li>

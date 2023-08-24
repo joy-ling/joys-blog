@@ -7,10 +7,8 @@ export default async function Home() {
   const pageViews = await kv.incr("views");
 
   return (
-    <main className="flex w-full min-h-screen flex-col items-center pt-10 p-5 md:p-24">
-
       <div className="w-full lg:w-[800px]">
-        <h2 className="text-3xl pb-5">Allow me to Introduce Myself</h2>
+        <h2 className="text-4xl pb-5">Allow me to Introduce Myself</h2>
         <p className="pb-5">My name is Joy Ling, and I&apos;m from Brooklyn, New York. I moved to the United Kingdom four years ago to be with my husband, Alex, a softspoken Brit from Liverpool.</p>
         <p className="pb-5">I&apos;m the youngest child in a family of immigrants. My parents moved from Malaysia to to New York in the 1980s with fifty dollars in their pocket and a determination to seize opportunities that only America could offer them at the time.</p>
         <p className="pb-5">I&apos;m a web developer by trade, and an artist at heart. I&apos;ve studied abroad, worked in creative agencies in New York and the UK and taught in coding schools for kids. Right now, I am a full stack developer at Milexa, an interior design company based in Liverpool.</p>
@@ -19,8 +17,6 @@ export default async function Home() {
         <div className="mt-5 mb-5">
           <strong>Your are visitor #{pageViews}</strong>
         </div>
-      </div>
-      
-    </main>
+      </div> 
   )
 }
