@@ -52,11 +52,11 @@ export default async function BlogPage({searchParams}: {searchParams: BlogSortQu
   //   posts[i].views = postViews[i];
   // }
 
-  if(searchParams.sortBy === "most-popular") {
-    posts.sort(sortPostsByViewCount).reverse();
-  } else if (searchParams.sortBy === "least-popular") {
-    posts.sort(sortPostsByViewCount);
-  }
+  // if(searchParams.sortBy === "most-popular") {
+  //   posts.sort(sortPostsByViewCount).reverse();
+  // } else if (searchParams.sortBy === "least-popular") {
+  //   posts.sort(sortPostsByViewCount);
+  // }
 
   if(searchParams.sortBy === "newest") {
     posts.sort(sortPostsByDate).reverse();
