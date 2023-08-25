@@ -5,11 +5,26 @@ import Image from 'next/image';
 import { compareDesc, format, parseISO } from 'date-fns'
 import { allPosts, Post } from 'contentlayer/generated'
 import { notFound } from 'next/navigation'
+import { kv } from "@vercel/kv";
+import { FaEye } from "react-icons/fa";
 
 
-export default function SmallPostCard(post: Post){
+// This function returns an array of numbers (views)
+// async function getPostViews() {
+//     const posts = allPosts;
+
+//     const postsWithViews = Promise.all(posts.map((post)=> {
+//     return kv.get(`views-${post.slug}`);
+//     }));
+
+//     return postsWithViews;
+// }
+
+
+export default async function SmallPostCard(post: Post){
 
     const category = getCategoryBySlug(post.category);
+    // const postViews = await getPostViews();
 
     if(!category) {
         return notFound()
@@ -35,6 +50,11 @@ export default function SmallPostCard(post: Post){
             </time>
 
             <CategoryLabel category={category}/>
+            
+            {/* <span className="flex flex-row items-center text-xs text-gray-600 pt-3">
+                <FaEye className="mr-2"/> {post.views}
+            </span> */}
         </div>
     );
 }
+
