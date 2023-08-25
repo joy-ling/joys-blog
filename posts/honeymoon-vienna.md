@@ -24,6 +24,13 @@ It soon occured to me, after exploring the rest of the city centre, that Café C
 
 ![image](/vienna-st-stephens-cathedral.jpg)
 
-There are museums and restaurants and town squares all elaborately designed by gold-loving architects. We saw The Kiss by Gustav Klimt in the Belvedere Gallery, which is more striking to see in person because of the gold leaves used to decorate the figures' bodies.
+There are museums and restaurants and town squares all elaborately designed by gold-loving architects. We saw The Kiss by Gustav Klimt in the Belvedere Gallery, which is more striking to see in person because of the gold leaves used to decorate the figures' bodies. We visited fancy bakeries, zoos and palace grounds and had Almdudler at McDonalds. Out of all the European cities I've been to, I would say that Vienna was the cleanest, the most extravagant, and also the most expensive.
 
-[More to come...]
+Our coffee addictions often led us to sample the caffeine in various cafés. We tried various independent cafés, Starbucks and restaurants, and the coffee was consistently priced at €5-7. For Pre-COVID Inflation times, that was a lot, especially when you considered that the euro was stronger than the British pound at the time. A meal for a single person cost about €15, and tickets to tourist attractions cost about €20. Needless to say, it was not a cheap city.
+
+Despite the expense, we enjoyed Vienna. We were fortunate to be there for the new year, and were wondering what new year traditions they had. We discovered them when we went to the bar in our hotel just before midnight. As we drank, watched Austrian television (with Alex trying to translate everything to me in real-time), and texted "Happy New Years" with our family members in the UK and the US, we eagerly anticipated for the countdown clock to strike zero. When it did, we were surprised to hear classical music start playing. All around us, people started getting up from their seats and started waltzing with their partners. The Viennese Waltz, as I soon learned, is a genre of ballroom dance that emerged in the 18th century. At the time, it was considered "morally apprehensible" because women would lift their long gowns above their ankles to prevent them from tripping, which also forced the dancers to press their bodies against each other.
+
+The dances we did witness, though, didn't seem all too scandalous to us. It was a pleasure to watch, and although we didn't join in on the festivities, we were simply glad to be there.
+
+
+(WIP...)
